@@ -17,7 +17,6 @@ pipeline {
         echo 'Sonar Qube'
       } 
     }
-    #CD
     stage('Push to Artifactory'){
      step {
         echo 'Push to artifactory'
