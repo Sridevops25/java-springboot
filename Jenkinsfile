@@ -1,39 +1,38 @@
 pipeline {
-  agent any # what is agent and what all options
-  
+  agent any
+
   stages {
     stage('Build'){
-      step {
+      steps{
         echo 'Build Phase'
       }
     }
     stage('Test'){
-      step {
+      steps{
         echo 'Test Phase'
       }
     }
     stage('Quality Gate- Sonar Cube'){
-     step {
+     steps{
         echo 'Sonar Qube'
-      } 
+      }
     }
-    #CD
     stage('Push to Artifactory'){
-     step {
+     steps{
         echo 'Push to artifactory'
-      } 
+      }
     }
     stage('Deploy to QA'){
-       step {
+       steps{
         echo 'Deploy to QA'
-      } 
+      }
     }
-    stage('Deploy to Production'){
-      step {
-        echo 'Deploy to Prod'
-      } 
+    stage('Deploy to UAT'){
+      steps{
+        echo 'Deploy to UAT'
+      }
     }
-   } 
+   }
   post {
     failure{
       echo'Failed'
@@ -49,4 +48,54 @@ pipeline {
     }
    }
   }
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
