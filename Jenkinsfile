@@ -6,12 +6,12 @@ pipeline {
       steps{
         echo 'Build Phase'
         sh 'mvn clean package'
-}
+      }
     }
     stage('Test'){
       steps{
         echo 'Test Phase'
-	sh 'mvn test'
+	      sh 'mvn test'
       }
     }
     stage('Quality Gate- Sonar Cube'){
@@ -34,7 +34,7 @@ pipeline {
         echo 'Deploy to Prod'
       } 
     }
-   } 
+  } 
   post {
     failure{
       echo'Failed'
@@ -48,6 +48,6 @@ pipeline {
     always{
     echo 'always'
     }
-   }
   }
+}
 
